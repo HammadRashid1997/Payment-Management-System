@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true" />	
+	<package name="base" extends="struts-default">
+					
+		<!-- HelloAction for testing purposes, has no link with the assignment -->
+		<action name="hello" class="com.test.struts2.HelloAction" method="SayHello">
+			<result name="success">/hello.jsp</result>
+			<result name= "error">/error.jsp</result>
+		</action>
+		
+		<!-- Bank Actions -->
+		<action name="createBankForm" class="com.test.struts2.BankAction" method="createBankForm">
+			<result name="input">/createBank.jsp</result>
+		</action>
+        <action name="createBank" class="com.test.struts2.BankAction" method="createBank">
+        	<result name = "success">/createBank.jsp</result>
+            <result name= "error">/error.jsp</result>
+            <interceptor-ref name="defaultStack">
+        		<param name="bankDAO">com.example.dao.BankDAO</param>
+   		 	</interceptor-ref>
+        </action>
+        
+        <action name="listBanks" class="com.test.struts2.BankAction" method="listBanks">
+            <result name = "success">/listBanks.jsp</result>
+            <result name= "error">/error.jsp</result>
+            <interceptor-ref name="defaultStack">
+        		<param name="bankDAO">com.example.dao.BankDAO</param>
+   		 	</interceptor-ref>
+        </action>
+        
+        <action name="adminBankList" class="com.test.struts2.BankAction" method="adminBankList">
+            <result name = "success">/adminBankList.jsp</result>
+            <result name= "error">/error.jsp</result>
+            <interceptor-ref name="defaultStack">
+        		<param name="bankDAO">com.example.dao.BankDAO</param>
+   		 	</interceptor-ref>
+        </action>
+
+        <!-- Account Actions -->
+         <action name="createAccount" class="com.test.struts2.AccountAction" method="createAccount">
+		    <result name="success" type="redirectAction">createAccount</result>
+		    <result name="input">/createAccount.jsp</result>
+		    <result name="error">/error.jsp</result>
+		    <interceptor-ref name="defaultStack">
+		        <param name="accountDAO">com.example.dao.AccountDAO</param>
+		    </interceptor-ref>
+		 </action>
+
+        <action name="listAccounts" class="com.test.struts2.AccountAction" method="listAccounts">
+            <result name = "success">/listAccounts.jsp</result>
+            <result name="error">/error.jsp</result>
+            <interceptor-ref name="defaultStack">
+        		<param name="accountDAO">com.example.dao.AccountDAO</param>
+   		 	</interceptor-ref>
+        </action>
+
+		<action name="accountDetails" class="com.test.struts2.AccountAction" method="showAccountDetailsForm">
+			<result name="input">/accountDetails.jsp</result>
+		</action>
+		<action name="getAccountInformation" class="com.test.struts2.AccountAction" method="getAccountInformation">
+		    <result name="success">/accountDetails.jsp</result>
+		    <result name="error">/error.jsp</result>
+		</action>
+		
+		<action name="adminAccountDetails" class="com.test.struts2.AccountAction" method="showAdminAccountDetailsForm">
+			<result name="input">/adminAccountDetails.jsp</result>
+		</action>
+		<action name="getAdminAccountInformation" class="com.test.struts2.AccountAction" method="getAdminAccountInformation">
+		    <result name="success">/adminAccountDetails.jsp</result>
+		    <result name="error">/error.jsp</result>
+		</action>
+		
+        <action name="accountUpdate" class="com.test.struts2.AccountAction" method="showUpdateAccountForm">
+			<result name="input">/accountUpdate.jsp</result>
+		</action>
+        <action name="updateAccount" class="com.test.struts2.AccountAction" method="updateAccount">
+		    <result name="success">/accountUpdate.jsp</result>
+		    <result name="error">/error.jsp</result>
+		    <interceptor-ref name="defaultStack">
+		        <param name="accountDAO">com.example.dao.AccountDAO</param>
+		    </interceptor-ref>
+		</action>
+
+		<action name="accountDelete" class="com.test.struts2.AccountAction" method="showDeleteAccountForm">
+			<result name="input">/accountDelete.jsp</result>
+		</action>
+        <action name="deleteAccount" class="com.test.struts2.AccountAction" method="deleteAccount">
+            <result name = "success">/accountDelete.jsp</result>
+            <result name="error">/error.jsp</result>
+            <interceptor-ref name="defaultStack">
+        		<param name="accountDAO">com.example.dao.AccountDAO</param>
+   		 	</interceptor-ref>
+        </action>
+        
+        <action name="paymentHistoryForm" class="com.test.struts2.PaymentHistoryAction" method="showPaymentHistoryForm">
+        	<result name="input">/paymentHistory.jsp</result>
+        </action>
+        <action name="paymentHistory" class="com.test.struts2.PaymentHistoryAction" method="retrievePaymentHistoryOfAccount">
+            <result name = "success">/paymentHistory.jsp</result>
+            <result name= "error">/error.jsp</result>
+            <interceptor-ref name="defaultStack">
+        		<param name="paymentDAO">com.example.dao.PaymentDAO</param>
+   		 	</interceptor-ref>
+        </action>
+        
+        <action name="userPaymentHistoryForm" class="com.test.struts2.PaymentHistoryAction" method="showUserPaymentHistoryForm">
+        	<result name="input">/userPaymentHistory.jsp</result>
+        </action>
+        <action name="userPaymentHistory" class="com.test.struts2.PaymentHistoryAction" method="retrieveUserPaymentHistoryOfAccount">
+            <result name = "success">/userPaymentHistory.jsp</result>
+            <result name= "error">/error.jsp</result>
+            <interceptor-ref name="defaultStack">
+        		<param name="paymentDAO">com.example.dao.PaymentDAO</param>
+   		 	</interceptor-ref>
+        </action>
+        
+        <!-- Balance Actions -->
+        <action name="accountBalanceForm" class="com.test.struts2.BalanceAction" method="accountBalanceForm">
+        	<result name="input">/accountBalance.jsp</result>
+        </action>
+        
+        <action name="accountBalance" class="com.test.struts2.BalanceAction" method="retrieveAccountBalance">
+            <result name ="success">/accountBalance.jsp</result>
+            <result name= "error">/error.jsp</result>
+             <interceptor-ref name="defaultStack">
+        		<param name="balanceDAO">com.example.dao.BalanceDAO</param>
+   		 	</interceptor-ref>
+        </action>
+        
+        <action name="adminAccountBalanceForm" class="com.test.struts2.BalanceAction" method="adminAccountBalanceForm">
+        	<result name="input">/adminAccountBalance.jsp</result>
+        </action>
+        
+        <action name="adminAccountBalance" class="com.test.struts2.BalanceAction" method="retrieveAdminAccountBalance">
+            <result name ="success">/adminAccountBalance.jsp</result>
+            <result name= "error">/error.jsp</result>
+             <interceptor-ref name="defaultStack">
+        		<param name="balanceDAO">com.example.dao.BalanceDAO</param>
+   		 	</interceptor-ref>
+        </action>
+        
+        <!-- Payment Actions -->
+        <action name="createPaymentForm" class="com.test.struts2.PaymentAction" method="displayCreatePayment">
+		    <result name="input">/paymentCreate.jsp</result>
+		</action>
+		<action name="createPayment" class="com.test.struts2.PaymentAction" method="createPayment">
+		    <result name="success">/paymentSuccess.jsp</result>
+		    <result name="error">/error.jsp</result>
+		</action>
+
+        <action name="listPayments" class="com.test.struts2.PaymentAction" method="listPayments">
+            <result name ="success">/listPayments.jsp</result>
+            <result name= "error">/error.jsp</result>
+            <interceptor-ref name="defaultStack">
+        		<param name="paymentDAO">com.example.dao.PaymentDAO</param>
+   		 	</interceptor-ref>
+        </action>
+        
+        <action name="paymentDetailsForm" class="com.test.struts2.PaymentAction" method="showPaymentDetailsForm">
+        	<result name="input">/paymentDetails.jsp</result>
+        </action>
+        <action name="getPaymentDetails" class="com.test.struts2.PaymentAction" method="getPaymentDetails">
+            <result name ="success">/paymentDetails.jsp</result>
+            <result name= "error">/error.jsp</result>
+            <interceptor-ref name="defaultStack">
+        		<param name="paymentDAO">com.example.dao.PaymentDAO</param>
+   		 	</interceptor-ref>
+        </action>
+        
+        <action name="userPaymentDetailsForm" class="com.test.struts2.PaymentAction" method="showUserPaymentDetailsForm">
+        	<result name="input">/userPaymentDetails.jsp</result>
+        </action>
+        <action name="getUserPaymentDetails" class="com.test.struts2.PaymentAction" method="getUserPaymentDetails">
+            <result name ="success">/userPaymentDetails.jsp</result>
+            <result name= "error">/error.jsp</result>
+            <interceptor-ref name="defaultStack">
+        		<param name="paymentDAO">com.example.dao.PaymentDAO</param>
+   		 	</interceptor-ref>
+        </action>
+        
+        <action name="paymentStatusForm" class="com.test.struts2.PaymentAction" method="showPaymentStatusForm">
+        	<result name="input">/paymentStatus.jsp</result>
+        </action>
+        <action name="getPaymentStatus" class="com.test.struts2.PaymentAction" method="getPaymentStatus">
+            <result name ="success">/paymentStatus.jsp</result>
+            <result name= "error">/error.jsp</result>
+            <interceptor-ref name="defaultStack">
+        		<param name="paymentDAO">com.example.dao.PaymentDAO</param>
+   		 	</interceptor-ref>
+        </action>
+
+		<action name="adminPaymentStatusForm" class="com.test.struts2.PaymentAction" method="showAdminPaymentStatusForm">
+        	<result name="input">/adminPaymentStatus.jsp</result>
+        </action>
+        <action name="getAdminPaymentStatus" class="com.test.struts2.PaymentAction" method="getAdminPaymentStatus">
+            <result name ="success">/adminPaymentStatus.jsp</result>
+            <result name= "error">/error.jsp</result>
+            <interceptor-ref name="defaultStack">
+        		<param name="paymentDAO">com.example.dao.PaymentDAO</param>
+   		 	</interceptor-ref>
+        </action>
+
+	    <!-- Admin Class -->
+	    <action name="adminLogin" class="com.test.struts2.AdminAction" method="adminLogin">
+	        <interceptor-ref name="defaultStack" />
+	        <result name="admin">/welcomeAdmin.jsp</result>
+	        <result name="success">/welcomeAdmin.jsp</result>
+	        <result name="error">/loginError.jsp</result>
+	        
+	    </action>
+	
+	    <!-- User class -->
+	    <action name="welcome-user">
+		    <result>/welcomeUser.jsp</result>
+		</action>
+		<action name="signup">
+		    <result>/signup.jsp</result>
+		</action>
+		
+	    <action name="userLogin" class="com.test.struts2.UserAction" method="userLogin">
+		    <interceptor-ref name="defaultStack" />
+		    <result name="user" type="redirectAction">welcome-user</result>
+		    <result name="error">/error.jsp</result>
+		</action>
+		
+		<action name="signup" class="com.test.struts2.UserAction" method="register">
+		    <interceptor-ref name="defaultStack" />
+		    <result name="success">/successSignup.jsp</result>
+		    <result name="user">/signup.jsp</result>
+		    <result name="error">/error.jsp</result>
+		</action>
+		
+		<!-- Logout Functionality -->
+		<action name="logout" class="com.test.struts2.LogOutAction" method="logOut">
+		    <result>/index.jsp</result>
+		</action>
+			
+		<action name="accountDisplay" class="com.test.struts2.AccountAction" method="displayUserAccountsForm">
+    		<result name="input">/accountDisplayList.jsp</result>
+		</action>
+		
+		<action name="displayAccounts" class="com.test.struts2.AccountAction" method="displayUserAccounts">
+    		<result name="success">/accountDisplayList.jsp</result>
+    		<result name="error">/error.jsp</result>
+		</action>
+		
+	</package>
+</struts>

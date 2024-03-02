@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+	<display-name>struts2</display-name>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<servlet>
+	    <servlet-name>H2Console</servlet-name>
+	    <servlet-class>org.h2.server.web.WebServlet</servlet-class>
+	    <init-param>
+	        <param-name>webAllowOthers</param-name>
+	        <param-value>true</param-value>
+	    </init-param>
+	    <load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+	    <servlet-name>H2Console</servlet-name>
+	    <url-pattern>/h2-console/*</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- Add the following context parameter to specify the location of the H2 database files -->
+	<context-param>
+	    <param-name>h2.path</param-name>
+	    <param-value>jdbc:h2:mem:pms</param-value>
+	</context-param>
+
+</web-app>

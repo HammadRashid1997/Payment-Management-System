@@ -41,9 +41,9 @@ At times, it is difficult for the people to send their payments due to severe we
 ## 2.3. Goals and Objectives
 The main objective and motivation behind creating this project is as follows:
 
-• Provide a platform to the users to transfer payments.
-• Provide a hassle-free environment to the people to make their payments secure.
-• Allow the users to enter their credentials and access multiple banks.
+- Provide a platform to the users to transfer payments.
+- Provide a hassle-free environment to the people to make their payments secure.
+- Allow the users to enter their credentials and access multiple banks.
 
 ## 2.4. Project Scope
 The main technology being used is Java along with Struts2 framework. The front end and back-end will be done using JavaScript, HTML, CSS and Java. The web server used is Apache Tomcat.
@@ -51,6 +51,6 @@ The main technology being used is Java along with Struts2 framework. The front e
 ## 2.5. Constraints
 The following are the constraints for the Payment Management System:
 
-• It can only send payment in one account at a time.
-• It can only send payments in selected banks.
-• The initial balance for each balance is 3000.0 despite the currency.
+- It can only send payment in one account at a time.
+- It can only send payments in selected banks.
+- The initial balance for each balance is 3000.0 despite the currency.

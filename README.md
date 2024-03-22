@@ -16,7 +16,7 @@ The objective of this document is to provide a comprehensive overview of the Pay
 
 ## 1.2. Intended Audience
 
-This project is for Bitlatic Technologies and its employees. Also, it can be used as a reference guide and a project report by other peers who wish to develop a web server application.
+This project can be used as a reference guide and a project report by other peers who wish to develop a web server application.
 
 ## 1.3. Definitions and Acronyms
 

@@ -1,6 +1,5 @@
 # 💰 Payment-Management-System
 
-
 # Chapter 1: Introduction
 
 The Payment Management System is a crucial application designed to serve as a seamless gateway between two registered banks, facilitating efficient payment processing. With the growing need for secure and convenient financial transactions, this system aims to bridge the gap and streamline payment operations between various banks, offering a user-friendly experience for both customers and administrators.

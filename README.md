@@ -407,15 +407,12 @@ This chapter mentions the design of the database along with the data dictionary.
   </tr>
 </table>
 
-# Chapter 6: Implementation and Test Cases
+# Chapter 6: Design Implementation
 
-This chapter talks about the implementation details for the prototype designed for the application and the test cases and their descriptions. Also, it enlists the test metrics which have been used and fulfilled.
+This chapter talks about the implementation details for the prototype designed.
 
 ## 6.1. Design Implementation
 
 The application will start with the welcome page which has a login page where the user and admin will be allowed to enter his credentials. If the user is new to the application, then he will be asked to signup page. The guest user will be allowed to enter his credentials and then proceed to the login page. The admin can only login with the given credentials as there is only one admin, while the user has to signup before login. So, for this purpose, once the application runs, only one user can create his account. When the admin logs in to the portal, he will be allowed to view several options such as create banks, list accounts etc. On the other hand, the user will be allowed to perform several functions such as create an account and list banks. Both the user and admin roles have a logout button which will be used to sign out from the application.
-
-## 6.2. Test Case Design and Description
-This section lists all the important test cases along with their descriptions in a tabular form, the standard format followed in the industry.
 
 

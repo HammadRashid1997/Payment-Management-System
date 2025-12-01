@@ -1,4 +1,4 @@
-# 💰 Payment-Management-System
+# 💰 Payment Management System
 
 # Chapter 1: Introduction
 
@@ -30,7 +30,6 @@ This project can be used as a reference guide and a project report by other peer
 - CSS: Cascading Style Sheet
 
 # Chapter 2: Project Vision
-This chapter is about the breakdown of the project’s vision, Payment Management System.
 
 ## 2.1. Problem Domain Overview
 Payment Management System shortly read as PMS is a web server application which aims at providing online payment services to its clients. The system comprises of several banks and middle services which they will provide in order to transfer money from one account to another.
@@ -56,7 +55,6 @@ The following are the constraints for the Payment Management System:
 - The initial balance for each balance is 3000.0 despite the currency.
 
 # Chapter 3: Software Requirement Specifications
-
 This chapter mentions the software requirements of our project which includes functional requirements, non-functional requirements, assumptions, business, stakeholders, and risk analysis.
 
 ## 3.1. List of Features
@@ -102,7 +100,6 @@ The functional requirements fully describe the external behavior of the system. 
 - The system shall allow a user to get payment status of the payment ID belonging to his account.
 
 ## 3.3. Quality Attributes
-
 The quality attributes are also known as non-functional attributes.
 
 ## 3.4. Non-Functional Requirements
@@ -211,7 +208,7 @@ This chapter mentions the design of the database along with the data dictionary.
 </p>
 
 <p align="center">
-  <i>The following screen is a visual representation of the Database of PMS.</i>
+  <i>Visual representation of Database Design</i>
 </p>
 
 ## 5.2. Database Dictionary
